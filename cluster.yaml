@@ -1,0 +1,8 @@
+cluster:
+  nodes:
+    - hostname: "control-01"
+    - hostname: "control-02"
+    - hostname: "control-03"
+    - hostname: "worker-01"
+    - hostname: "worker-02"
+    - hostname: "worker-03"

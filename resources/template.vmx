@@ -1,0 +1,29 @@
+displayName = "{hostname}"
+
+# Required
+guestOS = "ubuntu-64"
+config.version = "8"
+virtualHW.version = "19"
+
+numvcpus = {cpu}
+memSize = {memory}
+
+sata0.present = "TRUE"
+scsi0.present = "TRUE"
+ethernet0.present = "TRUE"
+pciBridge4.present = "TRUE"
+
+scsi0.virtualDev = "lsilogic"
+ethernet0.virtualDev = "vmxnet3"
+pciBridge4.virtualDev = "pcieRootPort"
+
+sata0:0.present = "TRUE"
+scsi0:0.present = "TRUE"
+
+sata0:0.deviceType = "cdrom-image"
+scsi0:0.deviceType = "scsi-hardDisk"
+
+sata0:0.fileName = "{dataStorePath}/{isoFolderName}/{hostname}-cidata.iso"
+scsi0:0.fileName = "{dataStorePath}/{hostname}/{nodeImage}.vmdk"
+
+ethernet0.networkName = "VM Network"
